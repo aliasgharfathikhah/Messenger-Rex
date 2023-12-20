@@ -15,11 +15,14 @@ from .models import Message
 from django.contrib.auth.models import User
 
 def message_view(request, username):
+    user = get_object_or_404(User, username=username)
     if request.method == 'POST':
         text = request.POST['text']
-        user = get_object_or_404(User, username=username)
-        Message.objects.create(text=text, for_user=user)
-        return HttpResponseRedirect('/')
+        Message.objects.create(text=text, for_user=user, from_user=request.user)
+        return HttpResponseRedirect(f'/messages/{username}')
     else:
-        return render(request, 'html/send_message.html', {'username': username})
+        sent_messages = Message.objects.filter(from_user=request.user, for_user=user)
+        received_messages = Message.objects.filter(from_user=user, for_user=request.user)
+        return render(request, 'html/send_message.html', {'username': username, 'sent_messages': sent_messages, 'received_messages': received_messages})
+
     
