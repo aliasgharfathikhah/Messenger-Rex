@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from rest_framework import viewsets
+from django.db.models import Q
 from .models import Message
 from .serializer import MessageSerializer
 
@@ -21,8 +22,10 @@ def message_view(request, username):
         Message.objects.create(text=text, for_user=user, from_user=request.user)
         return HttpResponseRedirect(f'/messages/{username}')
     else:
-        sent_messages = Message.objects.filter(from_user=request.user, for_user=user)
-        received_messages = Message.objects.filter(from_user=user, for_user=request.user)
-        return render(request, 'html/send_message.html', {'username': username, 'sent_messages': sent_messages, 'received_messages': received_messages})
+        messages = Message.objects.filter(
+            Q(from_user=request.user, for_user=user) | 
+            Q(from_user=user, for_user=request.user)
+        ).order_by('timestamp')
+        return render(request, 'html/send_message.html', {'username': username, 'messages': messages})
 
     
