@@ -6,3 +6,4 @@ class Message(models.Model):
     text = models.TextField()
     for_user = models.ForeignKey(User, on_delete=models.CASCADE)
     from_user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='messages_sent', default=1)
+    timestamp = models.DateTimeField(auto_now_add=True)
