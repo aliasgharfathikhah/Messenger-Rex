@@ -1,29 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
     <title>ارسال پیام</title>
 </head>
 <body>
-    <h1>ارسال پیام به {{ username }}</h1>
+    <div class="messages"> 
+        <ul>
+            {% for message in messages %}
+                <li class="{{ message.user }}">{{ message.text }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+
     <form method="POST">
         {% csrf_token %}
-        <label for="text">متن پیام:</label><br>
-        <textarea id="text" name="text" rows="4" cols="50"></textarea><br>
-        <input type="submit" value="ارسال">
+        <textarea id="text" name="text" rows="4" cols="50" placeholder="Send a message to {{ username }}"></textarea><br>
+        <input type="submit" value="Send">
     </form>
-
-    <h2>پیام‌های ارسالی:</h2>
-    <ul style="text-align: left;">
-        {% for message in sent_messages %}
-            <li>{{ message.text }}</li>
-        {% endfor %}
-    </ul>
-
-    <h2>پیام‌های دریافتی:</h2>
-    <ul style="text-align: right;">
-        {% for message in received_messages %}
-            <li>{{ message.text }}</li>
-        {% endfor %}
-    </ul>
 </body>
 </html>

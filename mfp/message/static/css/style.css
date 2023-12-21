@@ -1,0 +1,70 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+}
+
+form {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+textarea {
+    width: 80%;
+    border: none;
+    border-radius: 50px;
+    height: 50px;
+    padding: 20px;
+    margin-right: 10px;
+    background-color: aquamarine;
+    font: icon;
+    font-size: xx-large;
+}
+
+input[type="submit"] {
+    width: 20%;
+    border: none;
+    border-radius: 50px;
+    font: icon;
+    font-size: x-large;
+    background-color: rgb(50, 135, 204);
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    max-height: 100vh;
+    margin: 0;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+li {
+    width: auto;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #000;
+    box-sizing: border-box;
+}
+
+.username1 {
+    background-color: #dcf8c6;
+    align-self: flex-end;
+    border-radius: 18px 0px 18px 18px;
+}
+
+.username2 {
+    background-color: #ffffff;
+    align-self: flex-start;
+    border-radius: 0px 18px 18px 18px;
+}
+
