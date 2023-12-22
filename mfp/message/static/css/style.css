@@ -5,7 +5,7 @@ body {
     height: 100vh;
     margin: 0;
     padding: 0;
-    background-color: #ffffff;
+    background-color: #393E46;
 }
 
 form {
@@ -26,16 +26,17 @@ textarea {
     margin-right: 10px;
     background-color: aquamarine;
     font: icon;
-    font-size: xx-large;
+    font-size: x-large;
 }
 
 input[type="submit"] {
     width: 20%;
     border: none;
     border-radius: 50px;
-    font: icon;
-    font-size: x-large;
+    font: italic;
+    font-size: 30px;
     background-color: rgb(50, 135, 204);
+    color: white;
 }
 
 ul {
@@ -48,23 +49,36 @@ ul {
     box-sizing: border-box;
 }
 
-li {
+.sent {
     width: auto;
     padding: 10px;
     margin: 10px 0;
-    border: 1px solid #000;
+    color: rgb(129, 134, 188);
+    border-radius: 10px;
     box-sizing: border-box;
+    font-size: large;
+    font: icon;
+    padding-right: 100px;
+    font-size: 20px;
+    text-align: right;
 }
 
-.username1 {
-    background-color: #dcf8c6;
-    align-self: flex-end;
-    border-radius: 18px 0px 18px 18px;
+.message-text {
+    direction: ltr;
 }
 
-.username2 {
-    background-color: #ffffff;
-    align-self: flex-start;
-    border-radius: 0px 18px 18px 18px;
+.received {
+    text-align: left;
+    direction: ltr;
+    width: auto;
+    padding: 10px;
+    padding-left: 100px;
+    margin: 10px 0;
+    color: rgb(163, 163, 106);
+    border-radius: 10px;
+    box-sizing: border-box;
+    font: icon;
+    font-size: 20px;
 }
+
 
