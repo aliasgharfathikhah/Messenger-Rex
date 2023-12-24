@@ -27,5 +27,12 @@ def message_view(request, username):
             Q(from_user=user, for_user=request.user)
         ).order_by('timestamp')
         return render(request, 'html/send_message.html', {'username': username, 'messages': messages})
-
     
+def home(request):
+    return render(request, 'html/home.html')
+
+def signup(request):
+    return render(request, 'html/signup.html')
+
+def login(request):
+    return render(request, 'html/login.html')  
