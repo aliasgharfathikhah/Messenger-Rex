@@ -18,19 +18,20 @@ form {
 }
 
 textarea {
-    width: 80%;
+    width: 90%;
     border: none;
     border-radius: 50px;
     height: 50px;
     padding: 20px;
     margin-right: 10px;
-    background-color: aquamarine;
+    background-color: rgb(255, 255, 255);
     font: icon;
     font-size: x-large;
+    
 }
 
 input[type="submit"] {
-    width: 20%;
+    width: 10%;
     border: none;
     border-radius: 50px;
     font: italic;
@@ -43,7 +44,7 @@ ul {
     display: flex;
     flex-direction: column;
     overflow-y: auto;
-    max-height: 100vh;
+    height: 85vh;
     margin: 0;
     padding: 10px;
     box-sizing: border-box;
@@ -75,10 +76,23 @@ ul {
     padding-left: 100px;
     margin: 10px 0;
     color: rgb(163, 163, 106);
-    border-radius: 10px;
     box-sizing: border-box;
     font: icon;
     font-size: 20px;
+    background-color: #393E46;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
-
+#text{
+    width: 90%;
+    border: none;
+    border-radius: 50px;
+    height: 50px;
+    padding: 20px;
+    margin-right: 10px;
+    background-color: rgb(255, 255, 255);
+    font: icon;
+    font-size: x-large;
+}

@@ -3,7 +3,7 @@
 <head>
     {% load static %}
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
-    <title>ارسال پیام</title>
+    <title></title>
 </head>
 <body>
     <div class="messages"> 
@@ -23,7 +23,7 @@
     <form method="POST">
         {% csrf_token %}
         <textarea id="text" name="text" rows="4" cols="50" placeholder="Send a message to {{ username }}"></textarea><br>
-        <input type="submit" value="(☞ﾟヮﾟ)☞ Send">
+        <input type="submit" value="🚀">
     </form>
 
     <script>

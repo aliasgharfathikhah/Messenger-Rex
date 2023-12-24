@@ -1,0 +1,57 @@
+li a:hover {
+    color: #f95700;
+    transition: all 1s;
+}
+
+ul {
+    display: flexbox;
+    justify-content: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #CDF0EA;
+    font-weight:normal;
+    font: icon;
+    font-size: x-large;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #393E46;
+
+}
+
+li {
+    float: right;
+}
+
+li a {
+    display: block;
+    color: rgb(191, 186, 186);
+    text-align: center;
+    padding: 15px 16px;
+    text-decoration: none;
+}
+
+.title{
+    display:flex;
+    justify-content: center;
+}
+
+.rex{
+    width: 330px;
+    height: 300px;
+    background-image: url('../image/logo-rex.png');
+    background-size: cover;
+    margin: 40px;
+}
+
+.txttitle{
+    font: icon;
+    font-size: 40px;
+    margin-top: 150px;
+}
