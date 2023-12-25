@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <title></title>
+</head>
+<body>
+    <div class="messages"> 
+        <ul id="messageList">
+            {% for message in messages %}
+                {% if message.from_user == request.user %}
+                    <li class="sent">{{ message.text|linebreaksbr }} <br> {{ message.timestamp|date:"g:i A" }} </li>
+                {% else %}
+                    <li class="received">{{ message.text|linebreaksbr }} <br> {{ message.timestamp|date:"g:i A" }}</li>
+                {% endif %}
+                <!-- <li class="{% if message.from_user.username == request.user %}sent{% else %}received{% endif %}"> -->
+            {% endfor %}
+        </ul>
+    </div>
+    
+
+    <form method="POST">
+        {% csrf_token %}
+        <textarea id="text" name="text" rows="4" cols="50" placeholder="Send a message to {{ username }}"></textarea><br>
+        <input type="submit" value="🚀">
+    </form>
+
+    <script>
+        var messageList = document.getElementById('messageList');
+        messageList.scrollTop = messageList.scrollHeight;
+    </script>
+</body>
+</html>
