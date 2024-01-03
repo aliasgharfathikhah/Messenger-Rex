@@ -1,11 +1,11 @@
-body {
+.messagesend {
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: flex-end;  
     height: 100vh;
     margin: 0;
     padding: 0;
-    background-color: #393E46;
+    background-color: #ffffff;
 }
 
 form {
@@ -24,9 +24,9 @@ textarea {
     height: 50px;
     padding: 20px;
     margin-right: 10px;
-    background-color: rgb(255, 255, 255);
     font: icon;
     font-size: x-large;
+    /* background-color: rgb(228, 228, 228); */
     
 }
 
@@ -48,42 +48,44 @@ ul {
     margin: 0;
     padding: 10px;
     box-sizing: border-box;
+    align-items: flex-start;
+}
+
+.message-container {
+    display: inline-block;
 }
 
 .sent {
     width: auto;
     padding: 10px;
     margin: 10px 0;
-    color: rgb(129, 134, 188);
-    border-radius: 10px;
+    color: rgb(62, 62, 62);
     box-sizing: border-box;
-    font-size: large;
     font: icon;
-    padding-right: 100px;
-    font-size: 20px;
-    text-align: right;
-}
-
-.message-text {
-    direction: ltr;
+    text-align: left;
+    background-color: rgb(206, 205, 158);
+    text-align: right; /* تغییر این قسمت به right */
+    align-self: flex-end;
+    border-bottom-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+    border-top-left-radius: 30px;
+    font-size: x-large;
 }
 
 .received {
-    text-align: left;
-    direction: ltr;
+    background-color: #f9ff9e;
     width: auto;
     padding: 10px;
-    padding-left: 100px;
     margin: 10px 0;
-    color: rgb(163, 163, 106);
+    color: rgb(62, 62, 62);
     box-sizing: border-box;
     font: icon;
-    font-size: 20px;
-    background-color: #393E46;
-    border-bottom-right-radius: 10px;
-    border-bottom-left-radius: 10px;
-    border-top-right-radius: 10px;
+    border-bottom-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+    border-top-right-radius: 30px;
+    font-size: x-large;
 }
+
 
 #text{
     width: 90%;
@@ -92,7 +94,7 @@ ul {
     height: 50px;
     padding: 20px;
     margin-right: 10px;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(230, 229, 229);
     font: icon;
     font-size: x-large;
 }

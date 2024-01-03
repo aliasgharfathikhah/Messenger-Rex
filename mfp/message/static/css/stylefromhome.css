@@ -10,7 +10,6 @@ ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #CDF0EA;
     font-weight:normal;
     font: icon;
     font-size: x-large;
@@ -21,12 +20,6 @@ ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #393E46;
-
-}
-
-li {
-    float: right;
 }
 
 li a {
@@ -53,5 +46,44 @@ li a {
 .txttitle{
     font: icon;
     font-size: 40px;
-    margin-top: 150px;
+    margin-top: 180px;
+}
+.txttitle2{
+    font: icon;
+    font-size: 40px;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.friends {
+    display: flex;
+    justify-content: center;
+    width: calc(100% / 4); 
+    margin: 20px;
+}
+
+
+.friendsimag{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.hr{
+    width: 80%;
+    align-items: center;
+}
+
+.linkusername{
+    display: block; 
+    text-decoration: none;
+    font: icon;
+    font-size: large;
+    margin-top: 40px;
+    margin-right: 20px;
 }

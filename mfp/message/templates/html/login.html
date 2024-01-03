@@ -12,10 +12,36 @@
 <body>
     <div class="form">
         <div class="left">
-            <h1>Welcome to login form!</h1>
+            <!-- <h1>Welcome to login form!</h1>
             <input type="text" class="inputs" placeholder="Username">
             <input type="password" class="inputs" placeholder="Password">
-            <button class="btn">Submit</button>
+            <button class="btn">Submit</button> -->
+            <form action="/login" method="post" dir="ltr">
+                <p>به حساب خود وارد شوید</p>
+                
+                {% csrf_token %}
+                <div>
+                  {{ form.username }}
+                </div>
+                
+
+              <div>
+                {{ form.password }}
+              </div>
+              
+
+                {% if form.errors or form.non_field_errors %}
+                    <div>
+                        {% for field in form %}
+                            {% for error in field.errors %}
+                                {{ error }}
+                            {% endfor %}
+                        {% endfor %}
+                        {{ form.non_field_errors }}
+                    </div>
+                {% endif %}
+                <button  class="btn">Enter</button>
+                
         </div>
     </div>
 </body>

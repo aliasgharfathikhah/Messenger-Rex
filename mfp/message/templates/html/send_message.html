@@ -5,19 +5,17 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
     <title></title>
 </head>
-<body>
+<body class="messagesend">
     <div class="messages"> 
         <ul id="messageList">
             {% for message in messages %}
-                {% if message.from_user == request.user %}
-                    <li class="sent">{{ message.text|linebreaksbr }} <br> {{ message.timestamp|date:"g:i A" }} </li>
-                {% else %}
-                    <li class="received">{{ message.text|linebreaksbr }} <br> {{ message.timestamp|date:"g:i A" }}</li>
-                {% endif %}
-                <!-- <li class="{% if message.from_user.username == request.user %}sent{% else %}received{% endif %}"> -->
+                <li class="message-container {% if message.from_user == request.user %}sent{% else %}received{% endif %}">
+                    {{ message.text|linebreaksbr }} <br> {{ message.timestamp|date:"g:i A" }}
+                </li>
             {% endfor %}
         </ul>
     </div>
+    
     
 
     <form method="POST">
