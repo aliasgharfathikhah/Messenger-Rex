@@ -13,41 +13,39 @@
         <div class="form">
             <div class="left">
                 <h1>Welcome to login form!</h1>
-
-                <form action="/signup" method="post" dir="ltr">
-                    
+                <form action="/signup" method="post" enctype="multipart/form-data" dir="ltr">
                     {% csrf_token %}
                     <div>
                         {{ form.avatar }}
                     </div>
-
+                
                     <div>
-                    {{ form.username }}
+                        {{ form.username }}
                     </div>
                     
                     <div>
-                    {{ form.email }}
+                        {{ form.email }}
                     </div>
-
+                
                     <div>
-                    {{ form.password1 }}
+                        {{ form.password1 }}
                     </div>
                     
                     <div>
-                    {{ form.password2 }}
+                        {{ form.password2 }}
                     </div>
-
-                {% if form.errors or form.non_field_errors %}
-                    <div>
-                        {% for field in form %}
-                            {% for error in field.errors %}
-                                {{ error }}
+                
+                    {% if form.errors or form.non_field_errors %}
+                        <div>
+                            {% for field in form %}
+                                {% for error in field.errors %}
+                                    {{ error }}
+                                {% endfor %}
                             {% endfor %}
-                        {% endfor %}
-                        {{ form.non_field_errors }}
-                    </div>
-                {% endif %}
-                    <button  class="btn" >Submit</button>
+                            {{ form.non_field_errors }}
+                        </div>
+                    {% endif %}
+                    <button class="btn">Submit</button>
                 </form>
             </div>
         </div>
