@@ -9,12 +9,17 @@
     <div class="messages"> 
         <ul id="messageList">
             {% for message in messages %}
-                <li class="message-container {% if message.from_user == request.user %}sent{% else %}received{% endif %}">
-                    {{ message.text|linebreaksbr }} <br> {{ message.timestamp|date:"g:i A" }}
-                </li>
+                {% with sender_profile=message.from_user.userprofile %}
+                    <li class="message-container {% if message.from_user == request.user %}sent{% else %}received{% endif %}">
+                        <img src="{{ sender_profile.avatar.url }}" alt="User Avatar" class="avatar">
+                        <br> {{ message.text|linebreaksbr }} <br> {{ message.timestamp|date:"g:i A" }}
+                    </li>
+                {% endwith %}
             {% endfor %}
         </ul>
     </div>
+    
+    
     
     
 
