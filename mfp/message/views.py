@@ -33,10 +33,14 @@ def message_view(request, username):
         )
 
 def home(request):
-    
     if request.user.is_authenticated:
-        messages = Message.objects.filter(from_user=request.user)
-        usernames = set([message.for_user.username for message in messages])
+        sent_messages = Message.objects.filter(from_user=request.user)
+        received_messages = Message.objects.filter(for_user=request.user)
+        
+        sent_usernames = set([message.for_user.username for message in sent_messages])
+        received_usernames = set([message.from_user.username for message in received_messages])
+        
+        usernames = sent_usernames.union(received_usernames)
         users = User.objects.filter(username__in=usernames)
     else:
         messages = []
@@ -47,6 +51,7 @@ def home(request):
         'username': username,
         'users': users
     })
+
 
 def login(request):
     return render(request, 'html/login.html')  
