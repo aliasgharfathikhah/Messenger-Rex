@@ -12,5 +12,5 @@ class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     avatar = models.ImageField(upload_to='avatars')
 
-    def __str__(self):
-        return self.user
+    # def __str__(self):
+    #     return self.user

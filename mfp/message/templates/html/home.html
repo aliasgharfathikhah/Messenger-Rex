@@ -12,6 +12,8 @@
             <div class="rex"></div>
             <h1 class="txttitle">hello {{username}}</h1>
         </div>
+        
+        <br><br><br>
         {% if users %}
             <h1 class="txttitle2">Your friends</h1>
             <hr class="hr">
@@ -24,6 +26,21 @@
                 {% endfor %}
             </div>              
         {% endif %}
+
+        <br><br><br>
+        <h1 class="txttitle2">Search new friends</h1>
+        <form id="usernameForm" action="" method="get">
+            <input type="text" id="username" name="username" placeholder="Enter username">
+            <input type="submit" value="Go to user" class="btn2">
+        </form>
+        
+        <script>
+        document.getElementById('usernameForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            var username = document.getElementById('username').value;
+            window.location.href = '/messages/' + username;
+        });
+        </script>
     {% else %}
         <div class="title">
             <div class="rex"></div>
